@@ -1,6 +1,11 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        @font-face {
+            font-family: 'digital-clock-font';
+            src: url(font/alarm-clock.ttf);
+        }
+
         body {
             background-color: black
         }
@@ -15,15 +20,20 @@
             text-align: center;
             font-size: 600%;
         }
+
         h2 {
             color: lightseagreen;
             text-align: center;
             font-size: 200%;
         }
+
         h3 {
             color: red;
             text-align: center;
-            font-size: 400%;
+            font-size: 500%;
+            font-family: 'digital-clock-font';
+        }
+
     </style>
 </head>
 
@@ -33,24 +43,60 @@
         <h1>SET B<br>FINAL<br>COUNT<br>DOWN</h1>
     </p>
 
-    <p><h2>Database Assignment 6 Due</h2></p>
-    <h3><p id="Database Assignment 6 Due">0 days 0 hrs 0 min 0 sec</p></h3>
-    <p><h2>COMM Proposal Due</h2></p>
-    <h3><p id="Comm Proposal Due">0 days 0 hrs 0 min 0 sec</p></h3>
-    <p><h2>Java Assignment 2b due</h2></p>
-    <h3><p id="Java Assignment 2b due">0 days 0 hrs 0 min 0 sec</p></h3>
-    <p><h2>COMM Final Exam</h2></p>
-    <h3><p id="COMM Final Exam">0 days 0 hrs 0 min 0 sec</p></h3>
-    <p><h2>Math Final Exam</h2></p>
-    <h3><p id="Math Final Exam"0 days 0 hrs 0 min 0 sec></p></h3>
-    <p><h2>C Final Exam</h2></p>
-    <h3><p id="C Final Exam">0 days 0 hrs 0 min 0 sec</p></h3>
-    <p><h2>Database Final Exam</h2></p>
-    <h3><p id="Database Final Exam">0 days 0 hrs 0 min 0 sec</p></h3>
-    <p><h2>Java Final Exam</h2></p>
-    <h3><p id="Java Final Exam">0 days 0 hrs 0 min 0 sec</p></h3>
-    <p><h2>Architecture Final Exam</h2></p>
-    <h3><p id="Architecture Final Exam">0 days 0 hrs 0 min 0 sec</p></h3>
+    <p>
+        <h2>Database Assignment 6 Due</h2>
+    </p>
+    <h3>
+        <p id="Database Assignment 6 Due">00 : 00 : 00 : 00</p>
+    </h3>
+    <p>
+        <h2>COMM Proposal Due</h2>
+    </p>
+    <h3>
+        <p id="Comm Proposal Due">00 : 00 : 00 : 00</p>
+    </h3>
+    <p>
+        <h2>Java Assignment 2b due</h2>
+    </p>
+    <h3>
+        <p id="Java Assignment 2b due">00 : 00 : 00 : 00</p>
+    </h3>
+    <p>
+        <h2>COMM Final Exam</h2>
+    </p>
+    <h3>
+        <p id="COMM Final Exam">00 : 00 : 00 : 00</p>
+    </h3>
+    <p>
+        <h2>Math Final Exam</h2>
+    </p>
+    <h3>
+        <p id="Math Final Exam">00 : 00 : 00 : 00</p>
+    </h3>
+    <p>
+        <h2>C Final Exam</h2>
+    </p>
+    <h3>
+        <p id="C Final Exam">0 days 0 hrs 0 min 0 sec</p>
+    </h3>
+    <p>
+        <h2>Database Final Exam</h2>
+    </p>
+    <h3>
+        <p id="Database Final Exam">0 days 0 hrs 0 min 0 sec</p>
+    </h3>
+    <p>
+        <h2>Java Final Exam</h2>
+    </p>
+    <h3>
+        <p id="Java Final Exam">0 days 0 hrs 0 min 0 sec</p>
+    </h3>
+    <p>
+        <h2>Architecture Final Exam</h2>
+    </p>
+    <h3>
+        <p id="Architecture Final Exam">0 days 0 hrs 0 min 0 sec</p>
+    </h3>
 
 
     <script>
@@ -73,15 +119,19 @@
                 var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                var formattedDays = ("0" + days).slice(-2);
+                var formattedHours = ("0" + hours).slice(-2);
+                var formattedMinutes = ("0" + minutes).slice(-2);
+                var formattedSeconds = ("0" + seconds).slice(-2);
 
                 // Output the result in an element with id="demo"
-                document.getElementById(name).innerHTML = days + " days " + hours + " hrs "
-                    + minutes + " min " + seconds + " sec ";
+                document.getElementById(name).innerHTML = formattedDays + " : " + formattedHours + " : "
+                    + formattedMinutes + " : " + formattedSeconds;
 
                 // If the count down is over, write some text 
                 if (distance < 0) {
                     clearInterval(x);
-                    document.getElementById(name).innerHTML = "EXPIRED";
+                    document.getElementById(name).innerHTML = "Good Luck!";
                 }
             }, 1000);
         }
