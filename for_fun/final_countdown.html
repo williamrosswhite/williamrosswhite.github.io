@@ -1,0 +1,132 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @font-face {
+            font-family: 'digital-clock-font';
+            src: url(font/alarm-clock.ttf);
+        }
+         body {
+            background-color: black
+        }
+         p {
+            color: red;
+            text-align: center;
+        }
+         h1 {
+            color: white;
+            text-align: center;
+            font-size: 600%;
+        }
+         h2 {
+            color: lightseagreen;
+            text-align: center;
+            font-size: 200%;
+        }
+         h3 {
+            color: red;
+            text-align: center;
+            font-size: 500%;
+            font-family: 'digital-clock-font';
+        }
+     </style>
+</head>
+ <body>
+     <p>
+        <h1>SET B<br>FINAL<br>COUNT<br>DOWN</h1>
+    </p>
+     <p>
+        <h2>Database Assignment 6 Due</h2>
+    </p>
+    <h3>
+        <p id="Database Assignment 6 Due">00 : 00 : 00 : 00</p>
+    </h3>
+    <p>
+        <h2>COMM Proposal Due</h2>
+    </p>
+    <h3>
+        <p id="Comm Proposal Due">00 : 00 : 00 : 00</p>
+    </h3>
+    <p>
+        <h2>Java Assignment 2b due</h2>
+    </p>
+    <h3>
+        <p id="Java Assignment 2b due">00 : 00 : 00 : 00</p>
+    </h3>
+    <p>
+        <h2>COMM Final Exam</h2>
+    </p>
+    <h3>
+        <p id="COMM Final Exam">00 : 00 : 00 : 00</p>
+    </h3>
+    <p>
+        <h2>Math Final Exam</h2>
+    </p>
+    <h3>
+        <p id="Math Final Exam">00 : 00 : 00 : 00</p>
+    </h3>
+    <p>
+        <h2>C Final Exam</h2>
+    </p>
+    <h3>
+        <p id="C Final Exam">0 days 0 hrs 0 min 0 sec</p>
+    </h3>
+    <p>
+        <h2>Database Final Exam</h2>
+    </p>
+    <h3>
+        <p id="Database Final Exam">0 days 0 hrs 0 min 0 sec</p>
+    </h3>
+    <p>
+        <h2>Java Final Exam</h2>
+    </p>
+    <h3>
+        <p id="Java Final Exam">0 days 0 hrs 0 min 0 sec</p>
+    </h3>
+    <p>
+        <h2>Architecture Final Exam</h2>
+    </p>
+    <h3>
+        <p id="Architecture Final Exam">0 days 0 hrs 0 min 0 sec</p>
+    </h3>
+     <script>
+         function countdown(date, name) {
+            // Set the date we're counting down to
+            var countDownDate1 = new Date(date).getTime();
+             // Update the count down every 1 second
+            var x = setInterval(function () {
+                 // Get todays date and time
+                var now = new Date().getTime();
+                 // Find the distance between now and the count down date
+                var distance = countDownDate1 - now;
+                 // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                var formattedDays = ("0" + days).slice(-2);
+                var formattedHours = ("0" + hours).slice(-2);
+                var formattedMinutes = ("0" + minutes).slice(-2);
+                var formattedSeconds = ("0" + seconds).slice(-2);
+                 // Output the result in an element with id="demo"
+                document.getElementById(name).innerHTML = formattedDays + " : " + formattedHours + " : "
+                    + formattedMinutes + " : " + formattedSeconds;
+                 // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById(name).innerHTML = "Good Luck!";
+                }
+            }, 1000);
+        }
+        countdown("Nov 24, 2018 08:30:00", "Database Assignment 6 Due")
+        countdown("Nov 24, 2018 23:59:59", "Comm Proposal Due")
+        countdown("Nov 30, 2018 23:59:59", "Java Assignment 2b due")
+        countdown("Dec 10, 2018 8:00:00", "COMM Final Exam")
+        countdown("Dec 10, 2018 1:30:00", "Math Final Exam")
+        countdown("Dec 11, 2018 10:30:00", "C Final Exam")
+        countdown("Dec 11, 2018 10:30:00", "Database Final Exam")
+        countdown("Dec 12, 2018 13:00:00", "Java Final Exam")
+        countdown("Dec 14, 2018 13:00:0", "Architecture Final Exam")
+    </script>
+     </script>
+ </body>
+ </html> 
