@@ -30,7 +30,7 @@
         h3 {
             color: red;
             text-align: center;
-            font-size: 500%;
+            font-size: 600%;
             font-family: 'digital-clock-font';
         }
     </style>
@@ -38,79 +38,79 @@
 
 <body>
     <p>
-        <h1>SET B<br>FINAL<br>COUNT<br>DOWN</h1>
+        <h1>SET B FINAL<br>COUNT DOWN</h1>
     </p>
     <p>
         <h2>Database Assignment 6 Due</h2>
     </p>
     <h3>
-        <p id="Database Assignment 6 Due">00 : 00 : 00 : 00</p>
+        <p id="Database Assignment 6 Due">00:00:00:00</p>
     </h3>
     <p>
         <h2>COMM Proposal Due</h2>
     </p>
     <h3>
-        <p id="Comm Proposal Due">00 : 00 : 00 : 00</p>
+        <p id="Comm Proposal Due">00:00:00:00</p>
     </h3>
     <p>
         <h2>Math Assignment 3 Due</h2>
     </p>
     <h3>
-        <p id="Math Assignment 3 Due">00 : 00 : 00 : 00</p>
+        <p id="Math Assignment 3 Due">00:00:00:00</p>
     </h3>
     <p>
         <h2>Java Assignment 2b due</h2>
     </p>
     <h3>
-        <p id="Java Assignment 2b due">00 : 00 : 00 : 00</p>
+        <p id="Java Assignment 2b due">00:00:00:00</p>
     </h3>
     <p>
         <h2>Communications Pitch Session 01</h2>
     </p>
     <h3>
-        <p id="Communications Pitch Session 01">00 : 00 : 00 : 00</p>
+        <p id="Communications Pitch Session 01">00:00:00:00</p>
     </h3>
     <p>
         <h2>Database Lab 6 Due</h2>
     </p>
     <h3>
-        <p id="Database Lab 6 Due">00 : 00 : 00 : 00</p>
+        <p id="Database Lab 6 Due">00:00:00:00</p>
     </h3>
     <p>
         <h2>COMM Final Exam</h2>
     </p>
     <h3>
-        <p id="COMM Final Exam">00 : 00 : 00 : 00</p>
+        <p id="COMM Final Exam">00:00:00:00</p>
     </h3>
     <p>
         <h2>Math Final Exam</h2>
     </p>
     <h3>
-        <p id="Math Final Exam">00 : 00 : 00 : 00</p>
+        <p id="Math Final Exam">00:00:00:00</p>
     </h3>
     <p>
         <h2>C Final Exam</h2>
     </p>
     <h3>
-        <p id="C Final Exam">00 : 00 : 00 : 00</p>
+        <p id="C Final Exam">00:00:00:00</p>
     </h3>
     <p>
         <h2>Database Final Exam</h2>
     </p>
     <h3>
-        <p id="Database Final Exam">0 days 0 hrs 0 min 0 sec</p>
+        <p id="Database Final Exam">00:00:00:00</p>
     </h3>
     <p>
         <h2>Java Final Exam</h2>
     </p>
     <h3>
-        <p id="Java Final Exam">0 days 0 hrs 0 min 0 sec</p>
+        <p id="Java Final Exam">00:00:00:00</p>
     </h3>
     <p>
         <h2>Architecture Final Exam</h2>
     </p>
     <h3>
-        <p id="Architecture Final Exam">0 days 0 hrs 0 min 0 sec</p>
+        <p id="Architecture Final Exam">00:00:00:00</p>
     </h3>
     <script>
         function countdown(date, name) {
@@ -132,8 +132,8 @@
                 var formattedMinutes = ("0" + minutes).slice(-2);
                 var formattedSeconds = ("0" + seconds).slice(-2);
                 // Output the result in an element with id="demo"
-                document.getElementById(name).innerHTML = formattedDays + " : " + formattedHours + " : "
-                    + formattedMinutes + " : " + formattedSeconds;
+                document.getElementById(name).innerHTML = formattedDays + ":" + formattedHours + ":"
+                    + formattedMinutes + ":" + formattedSeconds;
                 // If the count down is over, write some text 
                 if (distance < 0) {
                     clearInterval(x);
